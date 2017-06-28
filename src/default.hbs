@@ -1,0 +1,17 @@
+---
+touch-indicator: false # types: pressure-waves
+id: #string
+class: #string
+url: "http://www."
+title: "Link"
+target: "_self"
+rel: "next"
+---
+<a href="{{{url}}}"
+    {{#if id}}id="{{{id}}}"{{/if}}
+    class="module{{#if partial-name}} partial{{/if}}{{#if class}} {{class}}{{/if}}"
+    title="{{{title}}}"
+    rel="{{{rel}}}"
+    data-module="{{#if module-name}}{{{module-name}}}{{else}}gp-module-ui-link{{/if}}"
+{{#if partial-name}} data-partial="{{partial-name}}"{{/if}}
+{{#if class}} target="{{target}}"{{/if}}{{#if deep}} deep="{{{deep}}}"{{/if}}{{#if hook}} data-hook="{{{hook}}}"{{/if}} {{#block "attributes"}}{{/block}}>{{#block "link-content"}}{{{title}}}{{/block}}</a>
